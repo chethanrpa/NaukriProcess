@@ -1,4 +1,11 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="NaukriLoginProcess" VisualBasic.Settings="{x:Null}" sap2010:WorkflowViewState.IdRef="NaukriLoginProcess_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="NaukriLoginProcess" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap2010:WorkflowViewState.IdRef>NaukriLoginProcess_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -92,6 +99,8 @@
       <AssemblyReference>System.Memory</AssemblyReference>
       <AssemblyReference>System.Private.Uri</AssemblyReference>
       <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="NaukriLoginProcess" sap:VirtualizedContainerService.HintSize="1452.0000000000002,1656" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -125,7 +134,7 @@
                       <uix:TargetAnchorable BrowserURL="naukri.com" CVScreenId="619ca3f1-e60c-4f36-a73e-42217acd5963" ContentHash="16vNko2j1U6H8wrmSGBlwQ" DesignTimeRectangle="1233, 201, 103, 50" DesignTimeScaleFactor="1.25" ElementType="Text" FullSelectorArgument="&lt;webctrl id='login_Layer' tag='A' aaname='Login' innertext='Login' /&gt;" FuzzySelectorArgument="&lt;webctrl id='login_Layer' tag='A' aaname='Login' innertext='Login' check:text='Login' /&gt;" Guid="cc084d48-8048-424f-baf3-b6a896a343ce" InformativeScreenshot="59274414d86fbfafb64684b98853888a.png" Reference="avif9jw6sEmwHNWCzHbDIg/o-1gHmxVs0SIsKoU4aP_4A" ScopeSelectorArgument="&lt;html app='chrome.exe' title='*Naukri*' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V5" Visibility="Interactive" />
                     </uix:NClick.Target>
                   </uix:NClick>
-                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Email ID / Username'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,250.4" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="07a511d9-964c-49b8-babc-03c33fdd740a" Text="chethands1357@gmail.com" Version="V4">
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Email ID / Username'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,250.4" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="07a511d9-964c-49b8-babc-03c33fdd740a" Text="[in_Config(&quot;NaukriUserId&quot;).ToString]" Version="V4">
                     <uix:NTypeInto.Target>
                       <uix:TargetAnchorable BrowserURL="naukri.com" CVScreenId="58d74529-35ab-4d02-8f13-dd44542bd665" ContentHash="xC26r_8NVU-bjmIKCIrGPA" DesignTimeRectangle="1354, 347, 513, 55" DesignTimeScaleFactor="1.25" ElementType="InputBox" FullSelectorArgument="&lt;webctrl tag='INPUT' type='text' /&gt;" Guid="831b9537-344c-4a71-9371-4fa5e3b7dcca" InformativeScreenshot="47b9c37eb40d93e9aeb9d0698e1a72ee.png" IsResponsive="True" Reference="avif9jw6sEmwHNWCzHbDIg/kCjBE3z6gU-ZID7Csh6d_w" ScopeSelectorArgument="&lt;html app='chrome.exe' title='*Naukri*' /&gt;" SearchSteps="Selector" Version="V5" Visibility="Interactive" WaitForReadyArgument="Interactive">
                         <uix:TargetAnchorable.Anchors>
@@ -136,7 +145,7 @@
                       </uix:TargetAnchorable>
                     </uix:NTypeInto.Target>
                   </uix:NTypeInto>
-                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Password'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,250.4" sap2010:WorkflowViewState.IdRef="NTypeInto_2" IsPassword="True" ScopeIdentifier="07a511d9-964c-49b8-babc-03c33fdd740a" Text="India@1357" Version="V4">
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Password'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,250.4" sap2010:WorkflowViewState.IdRef="NTypeInto_2" ScopeIdentifier="07a511d9-964c-49b8-babc-03c33fdd740a" Text="[in_Config(&quot;NaukriPassword&quot;).ToString]" Version="V4">
                     <uix:NTypeInto.Target>
                       <uix:TargetAnchorable BrowserURL="naukri.com" CVScreenId="3285758f-222d-462c-8c0a-951f2022af75" ContentHash="qaWAnissM0-y8M-rxMDgag" DesignTimeRectangle="1354, 471, 513, 55" DesignTimeScaleFactor="1.25" ElementType="InputBoxPassword" FullSelectorArgument="&lt;webctrl tag='INPUT' type='password' /&gt;" Guid="8bef796c-0f7f-4146-837c-95c9e0850c4a" InformativeScreenshot="039f776f1ac112bc12d0caecc44797d4.png" Reference="avif9jw6sEmwHNWCzHbDIg/-raEgpy7BU2kJHIuurLJIQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='*Naukri*' /&gt;" SearchSteps="Selector" Version="V5" Visibility="Interactive">
                         <uix:TargetAnchorable.Anchors>
