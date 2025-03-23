@@ -8,3 +8,6 @@
 Exceptions_Screenshots/*
 Tests/*
 LICENSE
+Data/Output/*
+.storage/*
+.screenshots/*
