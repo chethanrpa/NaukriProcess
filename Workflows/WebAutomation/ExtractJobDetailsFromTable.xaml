@@ -119,7 +119,7 @@
       <AssemblyReference>UiPath.Excel</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="ExtractJobDetailsFromTable" sap:VirtualizedContainerService.HintSize="1452.0000000000002,2933.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="ExtractJobDetailsFromTable" sap:VirtualizedContainerService.HintSize="1452.0000000000002,2954.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Int32" Name="intMaxDaysPosted" />
       <Variable x:TypeArguments="sd:DataTable" Name="dtNaukriDataTable" />
@@ -151,21 +151,21 @@
         </scg:List>
       </ui:MultipleAssign.AssignOperations>
     </ui:MultipleAssign>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Chrome Uipath, Rpa, Power Automate Jobs In Hy" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="616,2730.4" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="8799209d-4f3e-4952-a1e5-723803beda34" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Chrome Uipath, Rpa, Power Automate Jobs In Hy" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="616,2751.2" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="8799209d-4f3e-4952-a1e5-723803beda34" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="582.4,2490.4" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="582.4,2511.2" sap2010:WorkflowViewState.IdRef="Sequence_3">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:InterruptibleWhile CurrentIndex="{x:Null}" Condition="True" DisplayName="While" sap:VirtualizedContainerService.HintSize="548.8,2428.8" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_1">
+            <ui:InterruptibleWhile CurrentIndex="{x:Null}" Condition="True" DisplayName="While" sap:VirtualizedContainerService.HintSize="548.8,2449.6" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_1">
               <ui:InterruptibleWhile.Body>
-                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="547.2,2305.6" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="547.2,2326.4" sap2010:WorkflowViewState.IdRef="Sequence_2">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="sd:DataTable" Default="[New System.Data.DataTable]" Name="dtExtractDataTable" />
                   </Sequence.Variables>
@@ -191,9 +191,9 @@
                       <uix:TargetAnchorable BrowserURL="https://www.naukri.com/uipath-rpa-power-automate-jobs-in-hyderabad-secunderabad?k=uipath%2C%20rpa%2C%20power%20automate&amp;l=hyderabad%2C%20bangalore%2C%20chennai&amp;experience=4&amp;nignbevent_src=jobsearchDeskGNB" DesignTimeRectangle="634, 306, 700, 7807" DesignTimeScaleFactor="1.25" FullSelectorArgument="&lt;webctrl parentid='listContainer' tag='DIV' parentclass='styles_job-listing-container*' /&gt;" Guid="f10832c0-485e-4c50-b69f-268bd8ef5f1d" InformativeScreenshot="36a0ffbc37ce0e352e4baf86d1652b01.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='*naukri*' casesensitive:title='false' /&gt;" SearchSteps="Selector" Version="V5" Visibility="Interactive" WaitForReadyArgument="Interactive" />
                     </uix:NExtractData.Target>
                   </uix:NExtractData>
-                  <If Condition="[dtExtractDataTable IsNot Nothing AndAlso dtExtractDataTable.RowCount &gt; 0]" sap:VirtualizedContainerService.HintSize="513.6,1916.8" sap2010:WorkflowViewState.IdRef="If_1">
+                  <If Condition="[dtExtractDataTable IsNot Nothing AndAlso dtExtractDataTable.RowCount &gt; 0]" sap:VirtualizedContainerService.HintSize="513.6,1937.6" sap2010:WorkflowViewState.IdRef="If_1">
                     <If.Then>
-                      <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="512,1697.6" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                      <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="512,1718.4" sap2010:WorkflowViewState.IdRef="Sequence_4">
                         <Sequence.Variables>
                           <Variable x:TypeArguments="scg:List(sd:DataRow)" Name="listDataRow" />
                         </Sequence.Variables>
@@ -224,7 +224,7 @@
                             </scg:List>
                           </ui:MultipleAssign.AssignOperations>
                         </ui:MultipleAssign>
-                        <If Condition="[dtExtractDataTable IsNot Nothing AndAlso dtExtractDataTable.RowCount &gt; 0]" sap:VirtualizedContainerService.HintSize="478.4,1457.6" sap2010:WorkflowViewState.IdRef="If_2">
+                        <If Condition="[dtExtractDataTable IsNot Nothing AndAlso dtExtractDataTable.RowCount &gt; 0]" sap:VirtualizedContainerService.HintSize="478.4,1478.4" sap2010:WorkflowViewState.IdRef="If_2">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -232,7 +232,7 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                           <If.Then>
-                            <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="451.2,792.8" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                            <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="451.2,813.6" sap2010:WorkflowViewState.IdRef="Sequence_6">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -251,7 +251,11 @@
                                   </ui:Target>
                                 </ui:Activate.Target>
                               </ui:Activate>
-                              <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="417.6,210.4" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_1" Shortcuts="[d(hk)][k(End)][u(hk)]" Version="V4" />
+                              <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts 'Jobs'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="417.6,231.2" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_1" ScopeIdentifier="8799209d-4f3e-4952-a1e5-723803beda34" Shortcuts="[d(hk)][k(End)][u(hk)]" Version="V4">
+                                <uix:NKeyboardShortcuts.Target>
+                                  <uix:TargetAnchorable BrowserURL="naukri.com/uipath-rpa-power-automate-jobs-in-hyderabad-secunderabad-2" CVScreenId="1dd04582-2517-46c9-afce-5e4f07b46cb2" ContentHash="Zwa9m2gu2k6LWvwJQVnLsQ" DesignTimeRectangle="519, 147, 44, 25" DesignTimeScaleFactor="1.25" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='Jobs' parentid='root' tag='DIV' /&gt;" Guid="fc179d15-7273-46ef-a1e8-13ed88541488" InformativeScreenshot="4d659fb6d95849c6db349398d5c8b522.png" Reference="MEjA4O5dwUS0PzSZGTCPyA/udlA8KFM-E-1ILpB86TcXg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='*naukri*' casesensitive:title='false' /&gt;" SearchSteps="Selector" Version="V5" Visibility="Interactive" />
+                                </uix:NKeyboardShortcuts.Target>
+                              </uix:NKeyboardShortcuts>
                               <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Next'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="417.6,216.8" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="8799209d-4f3e-4952-a1e5-723803beda34" Version="V4">
                                 <uix:NClick.Target>
                                   <uix:TargetAnchorable BrowserURL="naukri.com/uipath-rpa-power-automate-jobs-in-hyderabad-secunderabad" CVScreenId="54c1f1b8-83cb-4df7-a0cc-bb5c51983d73" ContentHash="K_NR-SMcTUOKtd2GXUml5w" DesignTimeRectangle="1205, 620, 87, 42" DesignTimeScaleFactor="1.25" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='Next' tag='A' innertext='Next' /&gt;" Guid="0027855f-a94d-4960-975a-b28e024bf5f1" InformativeScreenshot="aad244a52c080e97a9eaa94f89f811b5.png" Reference="MEjA4O5dwUS0PzSZGTCPyA/SiSxkUF_n0Wp0iLimTgocg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='*naukri*' casesensitive:title='false' /&gt;" SearchSteps="Selector" Version="V5" Visibility="Interactive" />
