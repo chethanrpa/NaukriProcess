@@ -93,6 +93,8 @@
       <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
       <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
       <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="1452.0000000000002,1130.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -171,6 +173,7 @@
               <InArgument x:TypeArguments="x:String" x:Key="in_Experience">[strNaukriExperience]</InArgument>
               <InArgument x:TypeArguments="x:String" x:Key="in_Location">[strNaukriLocation]</InArgument>
               <InArgument x:TypeArguments="x:String" x:Key="in_Name">[strReqName]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_EmailId">[strReqEmail]</InArgument>
             </ui:InvokeWorkflowFile.Arguments>
           </ui:InvokeWorkflowFile>
         </Sequence>

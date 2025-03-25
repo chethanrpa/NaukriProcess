@@ -1,7 +1,8 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="ExtractJobDetailsFromTable" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="ExtractJobDetailsFromTable" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:umae="clr-namespace:UiPath.Mail.Activities.Enums;assembly=UiPath.Mail.Activities" xmlns:umame="clr-namespace:UiPath.MicrosoftOffice365.Activities.Mail.Enums;assembly=UiPath.Mail.Activities" xmlns:upr="clr-namespace:UiPath.Platform.ResourceHandling;assembly=UiPath.Platform" xmlns:usau="clr-namespace:UiPath.Shared.Activities.Utils;assembly=UiPath.Mail.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
     <x:Property Name="in_Name" Type="InArgument(x:String)" />
+    <x:Property Name="in_EmailId" Type="InArgument(x:String)" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
@@ -53,6 +54,14 @@
       <x:String>UiPath.Excel</x:String>
       <x:String>UiPath.Platform.ResourceHandling</x:String>
       <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities.Mail.Enums</x:String>
+      <x:String>UiPath.Shared.Activities.Utils</x:String>
+      <x:String>UiPath.Mail</x:String>
+      <x:String>UiPath.Mail.Activities.Enums</x:String>
+      <x:String>UiPath.Mail.SMTP.Activities</x:String>
+      <x:String>UiPath.Mail.Activities</x:String>
+      <x:String>UiPath.Platform</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -117,9 +126,16 @@
       <AssemblyReference>System.Linq.Queryable</AssemblyReference>
       <AssemblyReference>System.Text.RegularExpressions</AssemblyReference>
       <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>UiPath.CodedWorkflows</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="ExtractJobDetailsFromTable" sap:VirtualizedContainerService.HintSize="1452.0000000000002,2954.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="ExtractJobDetailsFromTable" sap:VirtualizedContainerService.HintSize="1452.0000000000002,3554.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Int32" Name="intMaxDaysPosted" />
       <Variable x:TypeArguments="sd:DataTable" Name="dtNaukriDataTable" />
@@ -151,21 +167,21 @@
         </scg:List>
       </ui:MultipleAssign.AssignOperations>
     </ui:MultipleAssign>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Chrome Uipath, Rpa, Power Automate Jobs In Hy" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="616,2751.2" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="8799209d-4f3e-4952-a1e5-723803beda34" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Chrome Uipath, Rpa, Power Automate Jobs In Hy" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="616,3351.2" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="8799209d-4f3e-4952-a1e5-723803beda34" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="582.4,2511.2" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="582.4,3111.2" sap2010:WorkflowViewState.IdRef="Sequence_3">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:InterruptibleWhile CurrentIndex="{x:Null}" Condition="True" DisplayName="While" sap:VirtualizedContainerService.HintSize="548.8,2449.6" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_1">
+            <ui:InterruptibleWhile CurrentIndex="{x:Null}" Condition="True" DisplayName="While" sap:VirtualizedContainerService.HintSize="548.8,3049.6" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_1" MaxIterations="10">
               <ui:InterruptibleWhile.Body>
-                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="547.2,2326.4" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="547.2,2926.4" sap2010:WorkflowViewState.IdRef="Sequence_2">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="sd:DataTable" Default="[New System.Data.DataTable]" Name="dtExtractDataTable" />
                   </Sequence.Variables>
@@ -191,9 +207,9 @@
                       <uix:TargetAnchorable BrowserURL="https://www.naukri.com/uipath-rpa-power-automate-jobs-in-hyderabad-secunderabad?k=uipath%2C%20rpa%2C%20power%20automate&amp;l=hyderabad%2C%20bangalore%2C%20chennai&amp;experience=4&amp;nignbevent_src=jobsearchDeskGNB" DesignTimeRectangle="634, 306, 700, 7807" DesignTimeScaleFactor="1.25" FullSelectorArgument="&lt;webctrl parentid='listContainer' tag='DIV' parentclass='styles_job-listing-container*' /&gt;" Guid="f10832c0-485e-4c50-b69f-268bd8ef5f1d" InformativeScreenshot="36a0ffbc37ce0e352e4baf86d1652b01.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='*naukri*' casesensitive:title='false' /&gt;" SearchSteps="Selector" Version="V5" Visibility="Interactive" WaitForReadyArgument="Interactive" />
                     </uix:NExtractData.Target>
                   </uix:NExtractData>
-                  <If Condition="[dtExtractDataTable IsNot Nothing AndAlso dtExtractDataTable.RowCount &gt; 0]" sap:VirtualizedContainerService.HintSize="513.6,1937.6" sap2010:WorkflowViewState.IdRef="If_1">
+                  <If Condition="[dtExtractDataTable IsNot Nothing AndAlso dtExtractDataTable.RowCount &gt; 0]" sap:VirtualizedContainerService.HintSize="513.6,2537.6" sap2010:WorkflowViewState.IdRef="If_1">
                     <If.Then>
-                      <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="512,1718.4" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                      <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="512,2318.4" sap2010:WorkflowViewState.IdRef="Sequence_4">
                         <Sequence.Variables>
                           <Variable x:TypeArguments="scg:List(sd:DataRow)" Name="listDataRow" />
                         </Sequence.Variables>
@@ -224,7 +240,7 @@
                             </scg:List>
                           </ui:MultipleAssign.AssignOperations>
                         </ui:MultipleAssign>
-                        <If Condition="[dtExtractDataTable IsNot Nothing AndAlso dtExtractDataTable.RowCount &gt; 0]" sap:VirtualizedContainerService.HintSize="478.4,1478.4" sap2010:WorkflowViewState.IdRef="If_2">
+                        <If Condition="[dtExtractDataTable IsNot Nothing AndAlso dtExtractDataTable.RowCount &gt; 0]" sap:VirtualizedContainerService.HintSize="478.4,2078.4" sap2010:WorkflowViewState.IdRef="If_2">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -232,7 +248,7 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                           <If.Then>
-                            <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="451.2,813.6" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                            <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="451.2,777.6" sap2010:WorkflowViewState.IdRef="Sequence_6">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -256,39 +272,60 @@
                                   <uix:TargetAnchorable BrowserURL="naukri.com/uipath-rpa-power-automate-jobs-in-hyderabad-secunderabad-2" CVScreenId="1dd04582-2517-46c9-afce-5e4f07b46cb2" ContentHash="Zwa9m2gu2k6LWvwJQVnLsQ" DesignTimeRectangle="519, 147, 44, 25" DesignTimeScaleFactor="1.25" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='Jobs' parentid='root' tag='DIV' /&gt;" Guid="fc179d15-7273-46ef-a1e8-13ed88541488" InformativeScreenshot="4d659fb6d95849c6db349398d5c8b522.png" Reference="MEjA4O5dwUS0PzSZGTCPyA/udlA8KFM-E-1ILpB86TcXg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='*naukri*' casesensitive:title='false' /&gt;" SearchSteps="Selector" Version="V5" Visibility="Interactive" />
                                 </uix:NKeyboardShortcuts.Target>
                               </uix:NKeyboardShortcuts>
-                              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Next'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="417.6,216.8" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="8799209d-4f3e-4952-a1e5-723803beda34" Version="V4">
+                              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Next'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="417.6,180.8" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="8799209d-4f3e-4952-a1e5-723803beda34" Version="V4">
                                 <uix:NClick.Target>
                                   <uix:TargetAnchorable BrowserURL="naukri.com/uipath-rpa-power-automate-jobs-in-hyderabad-secunderabad" CVScreenId="54c1f1b8-83cb-4df7-a0cc-bb5c51983d73" ContentHash="K_NR-SMcTUOKtd2GXUml5w" DesignTimeRectangle="1205, 620, 87, 42" DesignTimeScaleFactor="1.25" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='Next' tag='A' innertext='Next' /&gt;" Guid="0027855f-a94d-4960-975a-b28e024bf5f1" InformativeScreenshot="aad244a52c080e97a9eaa94f89f811b5.png" Reference="MEjA4O5dwUS0PzSZGTCPyA/SiSxkUF_n0Wp0iLimTgocg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='*naukri*' casesensitive:title='false' /&gt;" SearchSteps="Selector" Version="V5" Visibility="Interactive" />
                                 </uix:NClick.Target>
-                                <uix:NClick.VerifyOptions>
-                                  <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
-                                    <uix:VerifyExecutionOptions.Retry>
-                                      <InArgument x:TypeArguments="x:Boolean" />
-                                    </uix:VerifyExecutionOptions.Retry>
-                                    <uix:VerifyExecutionOptions.Timeout>
-                                      <InArgument x:TypeArguments="x:Double" />
-                                    </uix:VerifyExecutionOptions.Timeout>
-                                  </uix:VerifyExecutionOptions>
-                                </uix:NClick.VerifyOptions>
                               </uix:NClick>
                             </Sequence>
                           </If.Then>
                           <If.Else>
-                            <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="451.2,535.2" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                            <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="451.2,1171.2" sap2010:WorkflowViewState.IdRef="Sequence_7">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <If Condition="[dtNaukriDataTable IsNot Nothing AndAlso dtNaukriDataTable.RowCount &gt; 0]" sap:VirtualizedContainerService.HintSize="417.6,427.2" sap2010:WorkflowViewState.IdRef="If_3">
+                              <If Condition="[dtNaukriDataTable IsNot Nothing AndAlso dtNaukriDataTable.RowCount &gt; 0]" sap:VirtualizedContainerService.HintSize="417.6,1063.2" sap2010:WorkflowViewState.IdRef="If_3">
                                 <If.Then>
-                                  <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,199.2" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                                  <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,835.2" sap2010:WorkflowViewState.IdRef="Sequence_8">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
-                                    <ui:WriteRange WorkbookPathResource="{x:Null}" AddHeaders="True" DataTable="[dtNaukriDataTable]" DisplayName="Write Range Workbook" sap:VirtualizedContainerService.HintSize="382.4,139.2" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="[in_Name]" StartingCell="A1" WorkbookPath="[in_Config(&quot;ExtractedOutputFilePath&quot;).ToString]" />
+                                    <ui:WriteRange WorkbookPathResource="{x:Null}" AddHeaders="True" DataTable="[dtNaukriDataTable]" DisplayName="Write Range Workbook" sap:VirtualizedContainerService.HintSize="382.4,148" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="[in_Name]" StartingCell="A1" WorkbookPath="[in_Config(&quot;ExtractedOutputFilePath&quot;).ToString]" />
+                                    <Delay Duration="00:00:05" sap:VirtualizedContainerService.HintSize="382.4,122.4" sap2010:WorkflowViewState.IdRef="Delay_2" />
+                                    <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" ContinueOnError="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" ReplyTo="{x:Null}" ResourceAttachments="{x:Null}" Result="{x:Null}" SecurePassword="{x:Null}" TimeoutMS="{x:Null}" UseOAuth="{x:Null}" AttachmentInputMode="Builder" Body="[String.Format(&quot;Hi {0},&lt;br&gt;&lt;br&gt;Please find the Naukri job notifications attached in email.&lt;br&gt;That would help you in applying for the seeking position which is posted recently by HR.&lt;br&gt;&lt;br&gt;Thanks,&lt;br&gt;RPA BOT&quot;, in_Name).Replace(&quot;&lt;br&gt;&quot;, Environment.NewLine)]" DisplayName="Send SMTP Email" Email="chethands1357@gmail.com" EnableSSL="True" sap:VirtualizedContainerService.HintSize="382.4,278.4" sap2010:WorkflowViewState.IdRef="SendMail_1" IgnoreCRL="False" IsBodyHtml="False" Password="ocmdesviozxexfsw" Port="587" SecureConnection="Auto" Server="smtp.gmail.com" Subject="Naukri Job notification applications list" To="[in_EmailId]" UseISConnection="False">
+                                      <ui:SendMail.AttachmentsBackup>
+                                        <usau:BackupSlot x:TypeArguments="umame:AttachmentInputMode" StoredValue="Builder">
+                                          <usau:BackupSlot.BackupValues>
+                                            <scg:List x:TypeArguments="x:Object" x:Key="Existing" Capacity="1">
+                                              <x:Null />
+                                            </scg:List>
+                                          </usau:BackupSlot.BackupValues>
+                                        </usau:BackupSlot>
+                                      </ui:SendMail.AttachmentsBackup>
+                                      <ui:SendMail.ConnectionDetailsBackupSlot>
+                                        <usau:BackupSlot x:TypeArguments="umae:ConnectionDetails" StoredValue="LegacyConfiguration">
+                                          <usau:BackupSlot.BackupValues>
+                                            <scg:List x:TypeArguments="x:Object" x:Key="IntegrationService" Capacity="1">
+                                              <x:Null />
+                                            </scg:List>
+                                          </usau:BackupSlot.BackupValues>
+                                        </usau:BackupSlot>
+                                      </ui:SendMail.ConnectionDetailsBackupSlot>
+                                      <ui:SendMail.Files>
+                                        <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
+                                      </ui:SendMail.Files>
+                                      <ui:SendMail.ResourceAttachmentList>
+                                        <scg:List x:TypeArguments="InArgument(upr:IResource)" Capacity="4">
+                                          <InArgument x:TypeArguments="upr:IResource">[LocalResource.FromPath(in_Config("ExtractedOutputFilePath").ToString)]</InArgument>
+                                        </scg:List>
+                                      </ui:SendMail.ResourceAttachmentList>
+                                    </ui:SendMail>
+                                    <Delay Duration="00:00:05" sap:VirtualizedContainerService.HintSize="382.4,122.4" sap2010:WorkflowViewState.IdRef="Delay_1" />
+                                    <ui:DeleteFileX DisplayName="Delete File" sap:VirtualizedContainerService.HintSize="382.4,104" sap2010:WorkflowViewState.IdRef="DeleteFileX_1" Path="[in_Config(&quot;ExtractedOutputFilePath&quot;).ToString]" />
                                   </Sequence>
                                 </If.Then>
                                 <If.Else>

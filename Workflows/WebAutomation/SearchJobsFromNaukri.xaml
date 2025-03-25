@@ -5,6 +5,7 @@
     <x:Property Name="in_Experience" Type="InArgument(x:String)" />
     <x:Property Name="in_Location" Type="InArgument(x:String)" />
     <x:Property Name="in_Name" Type="InArgument(x:String)" />
+    <x:Property Name="in_EmailId" Type="InArgument(x:String)" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
@@ -112,6 +113,7 @@
       <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
       <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
       <AssemblyReference>System.Text.RegularExpressions</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="SearchJobsFromNaukri" sap:VirtualizedContainerService.HintSize="1452.0000000000002,2364" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -255,6 +257,7 @@
                     <ui:InvokeWorkflowFile.Arguments>
                       <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
                       <InArgument x:TypeArguments="x:String" x:Key="in_Name">[in_Name]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_EmailId">[in_EmailId]</InArgument>
                     </ui:InvokeWorkflowFile.Arguments>
                   </ui:InvokeWorkflowFile>
                 </Sequence>
